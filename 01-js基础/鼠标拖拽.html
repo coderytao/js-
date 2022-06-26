@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+            .box{
+                width: 300px;
+                height: 100px;
+                background-color: red;
+            }
+            .header{
+                width: 300px;
+                height: 40px;
+                font-size: 17px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="box">
+         <div class="header">
+              登录会员
+         </div>
+        
+       </div>
+    </body>
+    <script>
+        var box=document.querySelector('.box')
+        var header=document.querySelector('.header')
+        box.addEventListener('mousedown',function(e){
+             var pagex=e.pageX-box.offsetLeft;//获取盒子内的坐标
+             var pagey=e.pageY-box.offsetTop;
+             //鼠标移动的时候,把鼠标页面的坐标,减去盒子内的坐标
+             document.addEventListener('mouseover',function(e){
+                   box.style.left = e.pageX-pagex+'px';
+               box.style.top  =e.pageY-pagey+'px';
+             })
+        })
+       
+    </script>
+</html>

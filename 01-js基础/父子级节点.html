@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+    <ul >
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+    </ul>
+    <div class="box">
+        <div class="erweima">
+
+        </div>
+    </div>
+    </body>
+    <script>
+    //1.父节点parentNode得到是最近的父级节点
+     var box=document.querySelector(".box")
+     var erweima=document.querySelector(".erweima")
+     box.onclick=function(){
+         erweima.style.display="none"
+     }
+    // erweima.parentNode
+
+    //2子节点childNodes包含元素节点和文本节点
+    var ul=document.querySelector('ul')
+    console.log(ul.childNodes)
+    //3children是一个只读属性,返回所有的子元素节点伪数组方法
+    console.log(ul.children)
+    </script>
+</html>

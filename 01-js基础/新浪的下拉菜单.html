@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <style>
+         .box{
+             width: 35px;
+             height: 200px;
+             border: 1px solid #d5d5d5;
+             font-size: 16px;
+             list-style: none;
+             padding:5px 15px;
+         }
+         .box li{
+            margin-top: 10px;
+            
+         }
+         .boxitem{
+             display: none;
+             height: 100px;
+         }
+         .item{
+         border:1px solid #d5d5d5;
+        height: 100px;
+       
+         
+         }
+     </style>
+    </head>
+    <body>
+        <div class="box">
+          <li class="sina">微博</li>
+          <div class="boxitem">
+          <li >私信</li>
+          <li >评论</li>
+          <li >@我</li>
+        </div>
+        </div>
+    </body>
+    <script>
+        var sina=document.querySelector(".sina")
+        var boxitem=document.querySelector(".boxitem")
+        var lis=boxitem.children;
+       /* console.log(lis)
+        sina.onmouseover=function(){
+            boxitem.style.display="block";
+            boxitem.className="item";
+           boxitem.style.paddingTop="3px"
+         console.log(lis[0])
+        }*/
+       for(var i=0;i<lis.length;i++){
+           lis[i].onmouseover=function(){
+               this.children[1].style.display="block"
+           }
+           lis[i].onmouseout=function(){
+                this.children[1].style.display='none';
+            }
+       }
+      
+          
+       
+    </script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+          <button>按钮</button>
+          <input type="text" value="输入内容">
+        </body>
+        <script>
+            //1:获取元素,表单里面的值通过value来修改的
+            var btn=document.querySelector('button');
+            var input =document.querySelector('input');
+           btn.onclick=function(){
+               input.value='中国';
+               this.disabled=true;
+               //this的指向的是事件函数的调用btn
+           }
+           //2:如果想要某个表单被禁用
+          
+        </script>
+    </head>
+</html>

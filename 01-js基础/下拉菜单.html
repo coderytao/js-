@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            ul ,li{
+                list-style: none;
+            }
+            a{
+                width: 60px;
+                height: 50px;
+                background-color: aqua;
+                text-decoration: none;
+                position: relative;
+                
+            }
+            .arr{
+                position: absolute;
+                left: 13px;
+                top:45px;
+               
+            
+
+            }
+            .arr ,li{
+               line-height: 25px;
+               color:cadetblue;
+            
+            }
+            .nav ul{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+       <ul class="nav">
+           <li>
+               <a href="#">微博^</a>
+               <ul class="arr">
+                   <li>私信</li>
+                   <li>评论</li>
+                   <li>@我</li>
+               </ul>
+           </li>
+          
+       </ul>
+    </body>
+    <script>
+       var ul=document.querySelector('.nav')
+       var arr=document.querySelector('.arr')
+       for(var i=0;i<=ul.children.length;i++){
+           ul.children[i].onmouseover=function(){
+                arr.style.display="block"
+           }
+           ul.children[i].onmouseout=function(){
+                arr.style.display="none"
+           }
+       } 
+    </script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        .scroll{
+            width: 100px;
+            height: 200px;
+            background-color: red;
+            border:1px solid black;
+            padding: 10px ;
+            overflow: auto;
+        }
+    </style>
+    </head>
+    <body>
+     <div class="scroll">
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+ 文字
+     </div>
+    </body>
+    <script>
+        //scroll可以动态的到该元素的大小,滚动距离等
+        //scroll-top被文字减去的部分
+        //scroll事件=>当我们滚动条发送变化出发的事件
+        //不包含border 包含padding,content.包含溢出的部分
+   var scro=document.querySelector('div');
+     scro.addEventListener('scroll',function(){
+         var x=scro.scrollHeight//头部溢出的距离
+         var hidden=scro.scrollTop
+         console.log(x-hidden)
+     })
+    </script>
+</html>

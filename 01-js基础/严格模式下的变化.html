@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //严格模式下的变化
+        
+
+
+        //1 变量必须先声明在使用
+
+       // 'use strict';
+
+        // sum=10;
+        // console.log(sum)
+
+        //2 不能使用delete删除已声明的变量
+
+       // var num=10
+       // delete num
+
+        //3 严格模式下this的变化 =>全局变量中普通函数this指向的是undefined
+
+       function fn(){
+           console.log(this) //undefined
+       }
+        fn()
+         //4 严格模式下构造函数没用使用new 其中this的指向也是undefi
+
+         function Fun(){
+          console.log(this)//因为此时严格模式下this指向的是undefined
+         }
+         Fun()
+
+         //5 定时器中this指向的是window
+
+         setTimeout(()=>{
+             console.log(this)
+         })
+         //6 函数的形参不能重复声明
+        // function num (a ,a){
+       //      console.log(a+a)
+
+       //  }
+       //  num(1,1)
+        //7严格模式下不能在if for里面有函数
+       // if(){
+         //   function(){
+
+           // }
+        //}
+       </script>
+</html>

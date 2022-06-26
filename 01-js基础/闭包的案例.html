@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <ul class="nav">
+                <li>榴莲</li>
+                <li>臭豆腐</li>
+                <li>鲱鱼罐头</li>
+                <li>大猪蹄子</li>
+            </ul>
+        </body>
+        <script>
+            var don=document.querySelector('.nav').querySelectorAll('li')
+        /*  for(var i=0;i<don.length;i++){
+               don[i].index=i
+              don[i].onclick=function(){
+                 console.log(this.index)
+              }
+             
+          }*/
+        for(var i=0;i<don.length;i++){
+          // function fn(){
+            //don[i].index=i;
+               function fun(i){
+                   don[i].onclick=function(){
+                       console.log(i)
+                   }
+                  
+               } 
+               fun(i)
+           }
+         //  fn()
+          
+
+       // }
+       
+        </script>
+    </head>
+</html>

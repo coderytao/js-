@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <style>
+       div{
+           width: 200px;
+           height: 200px;
+           background-color: blanchedalmond;
+       }
+   </style>
+    </head>
+    <body>
+   <div>
+
+   </div>
+    </body>
+    <script>
+        //setlnterval()方法重复调用一个函数,每隔一段时间,就去调用一次回调函数.
+        //window.setlnterval(回调函数,毫秒数)
+        setInterval(function() {
+          //console.log(this)
+        }, 1000);
+        //setTimeout 延迟时间到了就调用一次
+        //setlnterval 每隔一段时间反复调用
+    var add=document.querySelector('div')
+     add.addEventListener('click',()=>{
+         console.log(this)
+     })   
+     //window.clearInterval(intervalId)
+     //clearInterval()方法取消了先前调用setInterval建立的定时器      
+    </script>
+</html>

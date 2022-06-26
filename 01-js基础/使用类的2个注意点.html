@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+<button>点击</button>
+    </body>
+    <script>
+        //1:=>类中不能变量提升 
+        //2 :=>调用时必须使用this
+        //使用类的两个方法 
+        var that;
+        class Star{
+            constructor(x,y){
+                //constructor里面的this指向的是实例化对象
+               this.x=x;
+               this.y=y;
+              // this.sing()//类方法属于实列对象的
+
+               this.btn=document.querySelector('button')
+               that=this;
+               console.log(that)
+               this.btn.onclick=this.sing;
+               
+            }
+            sing(){
+                //此时的this指向调用的实列化对象
+               
+              
+                console.log(that.y)//此时的this指向constructor
+                //因为that是全局变量而that又在constructor中
+            }
+            dance(){
+                //此时的this指向的是con
+            }
+           
+        }
+        var con=new Star();
+        class Num extends Star{
+              
+              constructor (x,y){
+                super(x,y)
+                  this.x=x;
+                  this.y=y;
+              }
+              num(){
+
+              }
+        } 
+        var number=new Num(4,5)
+       // number.sing()
+    </script>
+</html>

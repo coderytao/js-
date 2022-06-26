@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        input{
+            position: absolute;
+            top: 20px;
+        }
+    </style>
+    </head>
+    <body>
+      <input type="text">
+    </body>
+    <script>
+      //核心思路,检测用户是否按下s键,如果按下s键,则把光标定到搜索框里面.
+      var input =document.querySelector('input')
+     document.addEventListener('keyup',function(e){
+         if(e.keyCode==83){
+             input.focus();
+         }
+     })
+    </script>
+</html>

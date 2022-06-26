@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <style>
+         .search{
+             position: relative;
+             width: 178px;
+             margin: 100px;
+
+         }
+         .con{
+             display: none;
+             position: absolute;
+             top:-40px;
+             width: 171px;
+             border: 1px solid rebeccapurple;
+             padding: 5px 0;
+             font-size: 18px;
+             line-height: 20px;
+             color:#333;
+         }
+         .con::before{
+             content:'';
+             width: 0px;
+             height: 0px;
+             position: absolute;
+             top: 38px;
+             left: 18px;
+             border-style:solid dashed dashed;
+             border-color:#fff;
+         }
+         .class{
+             font-size: 20px;
+             position: absolute;
+             top:-40px;
+             width: 171px;
+             border: 1px solid rebeccapurple;
+             padding: 5px 0;
+             font-size: 18px;
+             line-height: 20px;
+             color:#333;
+         }
+     </style>
+    </head>
+        <body>
+        <div class="search">
+            <div class="con">
+                  123 
+            </div>
+                <input type="text" placeholder="请输入你的快递单号">
+
+          
+        </div>
+        </body>
+        <script>
+         var search=document.querySelector('input');
+         var con=document.querySelector('.con')
+         search.addEventListener('keyup',function(e){
+            
+             if(this.value==''){
+                 con.style.display="none"
+             }
+             else{
+                con.innerHTML=this.value;
+             con.style.display="block";
+              //  con.className="class"
+             }
+             //当文本框失去焦点时
+             
+         })
+         search.addEventListener('blur',function(){
+            con.style.display="none"
+         })
+        </script>
+   
+</html>

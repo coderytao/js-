@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //由于主线程不断的重复获得任务,执行任务,在获取任务,在执行所有这个机制被称为事件循环.
+
+        //一下结果会输出啥?
+        console.log(1);
+
+        document.onclick=function(){
+            console.log(4)
+        }
+        console.log(2)
+        setTimeout(function(){
+            console.log(3)
+        },3000);
+
+       
+        //首先执行同步任务输出1,4 
+        //异步任务:=>如果在3s之前没有点击,就执行setimeout.
+        //如果3s之前点击了,就执行onclcik.把它放到主线程最后的队列中,一直点击一直有。
+
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+      <ul>
+          <li>123</li>
+      </ul>
+    </body>
+    <script>
+
+        //创建节点 添加节点
+        //document.createElment('tagname'); 此方法是元素先不存在的,是根据需求动态创建节点
+        //node.appendChild(child)方法将一个节点添加到父节点的末尾
+        //node.insertBefore(child,指定元素)添加父节点的前面
+        //想要添加一个新元素:1创建元素,2添加元素
+        var li=document.createElement('li')
+
+        //添加节点 node.appendChild(child) node父 child孩子
+        var ul=document.querySelector('ul')
+        ul.createElement(li);
+
+        var lili=document.createElement('li')
+        ul.insertBefore(lili,children[0])
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    div{
+        width:100px;
+        height: 50px;
+        background-color: aquamarine;
+        position: absolute;
+        left: 10px;
+    }
+</style>
+    </head>
+    <body>
+
+        <div>
+
+        </div>
+    </body>
+    <script>
+        //缓动动画原理=>就是让元素运动速度有所变化,最常见的时让速度慢慢停下来.
+        //核心算法:(目标值-现在的位置)/10 作为每次移动的距离步长
+        var div=document.querySelector('div')
+      
+       var tiem=setInterval(function(){
+            var child=400;
+            var item=div.offsetLeft;//10
+            //把我们步长值改为整数,不会出现小数的问题
+            var index=(child-item)/10 //39 
+          index= index>0 ?Math.ceil(index):Math.floor(index) //如果大于0就取Math.ceil小于就取Math.floor
+           div.style.left=index+div.offsetLeft+'px';
+           if(index<=0){
+               clearInterval(tiem)
+           }
+        },150)
+        //匀速动画就是盒子时当前的位置。
+    </script>
+</html>

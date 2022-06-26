@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+          input{
+              color:#999;
+          }
+      </style>
+    </head>
+    <body>
+     <div class="text">
+         <input type="text" value="请输入文本" >
+         
+     </div>
+    </body>
+    <script>
+     //onfocus获取焦点,失去焦点onblur
+     var input=document.querySelector("input")
+     input.onfocus=function(){
+         if(this.value=="请输入文本"){
+              this.value=" "
+         }
+     }
+     //失去焦点传统注册事件
+     input.onblur=function(){
+          if(this.value=" "){
+              this.value="请输入文本"
+          }    
+     }
+    </script>
+</html>

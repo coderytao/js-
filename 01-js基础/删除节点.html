@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+      <button>删除</button>
+      <ul>
+          <li>熊大</li>
+          <li>熊二</li>
+          <li>光头强</li>
+      </ul>
+    </body>
+    <script>
+     //node.removeChild(child)方法从dom中删除一个子节点,返回删除的节点    
+      var btn=document.querySelector('button')
+      var ul=document.querySelector('ul')
+      btn.onclick=function(){
+          if(ul.children.length==0){
+              this.disabled=true
+          }
+          else{
+          ul.removeChild(ul.children[0])
+          }
+      }
+</script>
+</html>

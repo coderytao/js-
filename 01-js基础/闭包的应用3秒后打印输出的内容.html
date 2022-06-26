@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+    <ul class="nav">
+        <li>榴莲</li>
+        <li>臭豆腐</li>
+        <li>鲱鱼罐头</li>
+        <li>大猪蹄子</li>
+    </ul>
+    </body>
+    <script>
+        //闭包的应用-3s后打印输出li里面所有的内容
+        var lis=document.querySelector('.nav').querySelectorAll('li')
+        setTimeout(()=>{
+           
+            for(var i=0;i<lis.length;i++)
+            (function(i){
+                console.log(lis[i].innerHTML)
+            })(i)
+        },3000)
+    </script>
+</html>

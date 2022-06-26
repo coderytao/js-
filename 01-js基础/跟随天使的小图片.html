@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+          img{
+              position: absolute;
+              top:20px;
+          }
+      </style>
+    </head>
+    <body>
+       <img src="img/open.png">
+    </body>
+    <script>
+        var img=document.querySelector('img');
+        //给页面文档移动,用document。
+        document.addEventListener('mousemove',function(e){
+              img.style.left=e.pageX+'px';
+              img.style.top=e.pageY+'px';//一定要加px单位
+              console.log(e.pageY)
+        })
+    </script>
+</html>

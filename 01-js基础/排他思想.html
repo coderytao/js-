@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <style>
+       .change{
+        color: aquamarine;
+       }
+     </style>
+    </head>
+    <body>
+     <button>1</button>
+     <button>2</button>
+     <button>3</button>
+     <button>4</button>
+     <button>5</button>
+    </body>
+    <script>
+      //排他思想先把其他的去除掉,然后绑定自己的事件。
+        var  button=document.getElementsByTagName("button")
+      for(var i=0;i<button.length;i++){
+        button[i].onclick=function(){
+          for(var i=0;i<button.length;i++){
+              button[i].style.backgroundColor=''//先把所有的颜色去掉
+          }
+          //然后把着渲染出来
+              this.style.backgroundColor="red"  
+        }
+      }
+    </script>
+</html>

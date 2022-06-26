@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+  <div >我是div</div>
+  <span>我是span</span>
+    </body>
+    <script>
+        //兄弟节点node.nextSibling,node.previousSibling
+        //node.previousSibling返回元素的上一个兄弟节点,找不到返回null
+        //nextSibling返回元素的下一个兄弟节点,找不到返回值返回null
+        
+        //node.nextElementSibling返回的是下一个兄弟元素节点
+        //node.previousElementSibling返回的是上一个兄弟节点
+        //此两个方法ie9支持
+        //封装一个函数
+        function getNextElementSibling(element){
+            var el=element;
+            while(el=el.nextSibling){
+                if(el.nodeType==1){
+                    return el
+                }
+                return null
+            }
+        }
+
+       var div=document.querySelector("div")
+       console.log(div.nextSibling)
+    </script>
+
+</html>

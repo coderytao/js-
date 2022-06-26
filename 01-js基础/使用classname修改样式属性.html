@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <style>
+       .div{
+           width: 200px;
+           height: 200px;
+           background-color: red;
+       }
+       .chage{
+           width: 200px;
+           height: 200px;
+           font-size: 30px;
+           background-color:#d5d5d5;
+       }
+   </style>
+   
+    <body>
+     <div class="div">
+       一日不见如隔24小时
+     </div>
+    </body>
+</head>
+    <script>
+        //如果样式比较少,功能比较多的element.classname类名样式操作
+        //element.classname的样式是事件发生后才渲染的页面
+        //保留原来的类
+    var test=document.querySelector("div")
+    test.onclick=function(){
+       // this.className="chage"
+        this.className="div chage"//保留原来的类
+    }
+    </script>
+</html>

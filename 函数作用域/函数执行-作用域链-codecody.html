@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //函数执行-作用域链-面试题-内存管理--
+        console.log(num1)//这里显示undefined是因为没有添加到GO中
+        var name="codewhy";
+        var num1=20;
+        var num2=30;
+        var result=num1+num2;//这里定义的变量全部添加到window对象中作为其中的属性
+
+        console.log(window)
+          foo(123)
+       function foo(num){
+           console.log(m)
+           var m=20;
+           var n=10;
+           console.log('foo')
+           function bar (){
+               console.log(name)
+           }
+           bar();
+       }
+        var globalObject={
+            string:'类',
+            Date:'类',
+            window:globalObject,
+            name:undefined,
+            num1:undefined,
+            result:undefined
+        }
+
+        //v8执行过程是先执行globalObject编译阶段,其次执行num给其赋值.
+    </script>
+</html>

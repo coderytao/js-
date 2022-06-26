@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //语法:class name{ //class body}
+        //创建实列:var xx=new name();
+        //类必须实列化类里面都有一个constructor
+        //es6 constructor函数只要new 生成实列时就会执行该函数
+        class Xiaoliu {
+            constructor(uname){
+            this.uname=uname;
+            
+            }
+        }
+        var xx=new Xiaoliu('小刘')
+          console.log(xx)
+        
+
+
+
+
+
+
+
+
+
+
+        //es5
+        function Num(name){
+             this.name=name;
+        }
+        var number=new Num('小刘')
+       
+        //es5的方法每一个构造函数都有一个prototype属性
+        Num.prototype.sex=()=>{
+             console.log('你好')
+        }
+        number.sex()//prototype属性
+        //es5每一个prototype有一个属性constructor让它指向Num
+        Num.prototype={
+            constructor:Num,
+            sing:function(){
+                console.log('校长')
+            }
+        }
+       
+       
+    </script>
+</html>

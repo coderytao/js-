@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+     <div class="wrap">
+         <table>
+             <thead>
+                 <tr>
+                     <th>
+                         <input type="checkbox" id="j_cball" checked="checked"/>
+                     </th>
+                     <th>商品</th>
+                     <th>价钱</th>
+                 </tr>
+             </thead>
+             <tbody id="j_tb">
+              <tr>
+                  <td>
+                      <input type="checkbox" id="">
+                  </td>
+                  <td>iphone8</td>
+                  <td>8000</td>
+              </tr>
+              <tr>
+                  <td>
+                      <input type="checkbox"/>
+                      <td>ipad Pro</td>
+                      <td>5000</td>
+                  </td>
+                </tr>     
+            </tbody>
+         </table>
+     </div>
+    </body>
+    <script>
+         var checkbox=document.querySelector("#j_cball")
+         var input=document.getElementById("j_tb").getElementsByTagName("input")
+         
+         checkbox.onclick=function(){
+             this.checked// 可以得到复选框如果是true选中
+             for(var i=0;i<input.length;i++){
+                 input[i].checked=this.checked;
+         }
+         var flag=true//不选中
+         for(var i=0;i<input.length;i++){
+             input[i].onclick=function(){
+                   for(var j=0;j<input.length;j++){
+                       if(!input[i].checked){
+                          flag=true;
+                       }
+                   }
+                   input.checked=flag;
+             }
+         }
+        }
+    </script>
+</html>

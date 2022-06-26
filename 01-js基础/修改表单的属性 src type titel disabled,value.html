@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img{
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+        <body>
+          <button id="Mrliu" title="刘德华">刘德华</button>
+          <button id="Mrchen" title="张学友">张学友</button>
+          <img src="img/data对象.PNG" alt="">
+        </body>
+        <script>
+            //src,title,type,disabled
+           var Mrliu=document.getElementById('Mrliu')
+           var img=document.querySelector('img')
+           Mrliu.onclick=function(){
+              
+               img.src="img/事件源.PNG"
+               img.title="张学友嘎嘎"
+           }
+           var Mrchen=document.getElementById('Mrchen')
+           Mrchen.onclick=function(){
+             img.src="img/data对象.PNG"
+           }
+        </script>
+    </head>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //借用父构造函数继承属性
+        function Father(name,age){
+            //此时的this指向son
+             this.name=name;
+             this.age=age;
+            
+        }
+        
+       
+        function Son(name,age){
+            //此时的this指向son
+           
+           Father.call(this,name,age)//call后指向那,this就指向那。
+        }
+
+    
+                var Fa=new Son('小洪',18)
+                console.log(Fa) 
+      
+    </script>
+</html>

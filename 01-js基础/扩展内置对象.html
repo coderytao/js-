@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+
+        </body>
+        <script>
+            //原型对象的应用,扩展内置对象方法
+           
+            Array.prototype.sum=function(){
+              
+                for(var i=0;i<this.length-1;i++){
+                    var num=0;
+                    num+=this[i]
+
+                }
+              return num
+            }
+            var arr=[1,2,3]
+          console.log(arr.sum())
+        </script>
+    </head>
+</html>

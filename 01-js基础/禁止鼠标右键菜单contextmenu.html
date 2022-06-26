@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+       我是一段文字
+    </body>
+    <script>
+        //contextmenu主要控制应该何时显示上下文菜单
+        /*
+       document.addEventListener('contextmenu',function(e){
+           e.preventDefault()
+       })
+
+
+        */
+       //contextmenu禁用右键菜单
+       document.addEventListener('contextmenu',function(e){
+           e.preventDefault()
+       })
+       //selectstart禁止选中文字
+       document.addEventListener('selectstart',function(e){
+           e.preventDefault()
+       })
+    </script>
+</html>

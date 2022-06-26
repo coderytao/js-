@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+        <button id="time">显示当前系统时间</button>
+        <div>某个时间</div>
+        <p>
+            <span>123</span>
+        </p>
+        </body>
+        <script>
+            //element.innertext 去除html同时空格和换行会去掉
+            //element.innerHTml 保留空格和换行
+         var tiem=document.querySelector('#time')
+        
+         time.onclick=function(){
+             var text=document.querySelector('div')
+             var data=new Date()
+            
+             text.innerHTML= data
+         }
+         //innerhtml和innertext的区别
+         var div =document.querySelector('div');
+         div.innerText='<strong>小白</strong>'//不识别html标签 不保留空格和换行
+         div.innerHTML='<strong>小洪</strong>'//识别html标签,两个元素可获取的 保留空格和换行
+       var p=document.getElementsByTagName('p')[0]
+       console.log( p.getElementsByTagName('span').innerHTML='456')  
+        </script>
+    </head>
+</html>

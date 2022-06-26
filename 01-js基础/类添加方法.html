@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //es6中创建类
+
+        class Box {
+            //给constructor创建属性es6中constructor不需要添加自己指向自己
+            constructor(item){
+                  this.item=item
+            }
+            //给类添加方法es6不需要写function()不需要添加逗号
+            say(name){
+                console.log(this.item)
+                console.log(name)//
+            }
+        }
+        var bing=new Box('盒子')
+
+        
+        bing.say('嫦娥')//给say传递参数
+    </script>
+    </html>

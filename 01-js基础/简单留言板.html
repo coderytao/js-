@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+           textarea{
+               width: 100px;
+               height: 150px;
+               border:1px solid red;
+           }
+           ul li{
+               width: 100px;
+               height: 30px;
+               background: cadetblue;
+           }
+           li a{
+               float: right;
+           }
+       </style>
+    </head>
+    <body>
+        <textarea name="" id=""></textarea>
+        <button>发布</button>
+        <ul>
+            <li>沙发</li>
+        </ul>
+    </body>
+    <script>
+     var button=document.querySelector("button")
+     var text=document.querySelector('textarea')
+    
+     var ul=document.querySelector('ul')
+     button.onclick=function(){
+         //创建节点
+        var li=document.createElement('li');
+           li.innerHTML=text.value+'<a href="javascript;">删除</a>';//把表单内容添加到li中
+          //添加元素
+           ul.insertBefore(li,ul.children[0]);
+           //删除元素
+           var as=document.querySelectorAll('a')
+           for(var i=0;i<as.length;i++){
+               as[i].onclick=function(){
+                   //node.removechild(child)
+                  ul.removeChild(this.parentNode); 
+               }
+           }
+     }
+    </script>
+</html>

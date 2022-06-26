@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+     <ul >
+         <li>
+             知否
+         </li>
+         <li>
+             可否
+         </li>
+     </ul>
+     <ol>
+         <li>长春</li>
+         <li>吉林</li>
+     </ol>
+        </body>
+        <script>
+            //getelementByTagname()方法返回带有指定标签名一个对象的集合,以数组的方式存储
+            
+            var lis=document.getElementsByTagName('li')    ;
+            for(var i=0;i<lis.length;i++){
+                 console.log(lis[i])
+            }
+            //2:如果页面中只有一个标签，返回伪数组的形式
+            //3:根据标签名获取element.getelementsBytagname('标签名')
+         //4:父元素获取子元素必须指明是哪个对象
+            var ul=document.getElementsByTagName('ol')[0]
+            console.log(ul.getElementsByTagName('li'))
+
+        </script>
+    </head>
+</html>

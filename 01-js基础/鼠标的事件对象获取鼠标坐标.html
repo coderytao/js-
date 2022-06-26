@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //event对象代表事件的状态,跟事件相关的一系列信息的集合
+        //MouseEvent和键盘事件keyboardEvent
+         
+        document.addEventListener('click',function(e){
+            //e.clientX和e.clientY鼠标在可视区的范围
+            console.log(e.clientX)
+            console.log(e.clientY)
+            //page鼠标在页面文档的可视范围
+            console.log(e.pageX)
+            console.log(e.pageY)
+            //screenx返回电脑屏幕的范围
+        }
+        )
+        
+    </script>
+</html>

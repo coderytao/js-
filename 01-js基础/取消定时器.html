@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+      <button class="begin">开启定时器</button>
+      <button class="stop">停止定时器</button>
+    </body>
+    <script>
+       var begin=document.querySelector('.begin');
+       var stop=document.querySelector('.stop')
+        var time=null;//全局变量null是一个空对象
+       begin.addEventListener('click',function(){
+       time= setInterval(function(){
+            console.log(111)
+           },2000)
+       })
+       stop.addEventListener('click',function(){
+                clearInterval(time);//此时局部变量不能访问全局变量
+       },)
+    </script>
+</html>

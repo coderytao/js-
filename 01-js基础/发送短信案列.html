@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+   手机号码  <input type="number" >
+   <button>发送</button>
+    </body>
+    <script>
+        var btn=document.querySelector('button')
+        btn.addEventListener('click',function(){
+            var sum=5;//剩下的秒数
+            btn.disabled=true;
+            var that=this;
+            var time=setInterval(function(){
+                that.innerHTML= sum--+'s后再发送'
+               console.log(that)
+                if(sum==-1){
+                   sum=5;//还原为原来的数字
+                   btn.innerHTML='发送';
+                   btn.disabled=false;
+                   clearInterval(time)
+                }
+               
+            },1000)
+        })
+    </script>
+</html>

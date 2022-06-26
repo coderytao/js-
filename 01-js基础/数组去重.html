@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+
+        </body>
+        <script>
+            //indexof返回数组的索引号,如果不在数组中返回-1,1循环一遍判断个数是否大于1，大于就删除
+            var arr=['r','g','b','b','b']
+            console.log(arr.indexOf('blue'))
+            
+            function unique(arr){
+                var newArr=[];
+                for(var i=0;i<arr.length;i++){
+                    if(newArr.indexOf(arr[i])==-1){
+                        newArr.push(arr[i])
+                    }
+                    return newArr
+                }
+            }
+            var demo=unique('r','g','k','r')
+            console.log(demo)
+           
+        </script>
+    </head>
+</html>

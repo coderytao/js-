@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+         .father{
+           width: 100px;
+           height: 100px;
+           background-color: aquamarine;
+         }
+         .son{
+           width: 50px;
+           height: 50px;
+           background-color: black;
+         }
+       </style>
+    </head>
+    <body>
+      <div class="father">
+          <div class="son">
+
+          </div>
+      </div>
+    </body>
+    <script>
+       //阻止冒泡dom推荐的标志额e.stopPropagation()
+       var son=document.querySelector('.son');
+       son.addEventListener('click',function(e){
+         e.stopPropagation();//stop停止 
+         alert(11)
+       })
+       var father=document.querySelector('.father');
+       father.addEventListener('click',function(){
+            alert('222')
+       })
+    </script>
+</html>

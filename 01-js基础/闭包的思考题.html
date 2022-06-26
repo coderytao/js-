@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //思考题1
+        var name="The window";
+        var object={
+            name:'My object',
+            getnameFunc:function(){
+                //this指向当前的方法
+                return function(){//函数被终止并返回当前的值 return function(){}
+
+                    return this.name;
+                };
+            }
+        };
+        console.log(object.getnameFunc()())//this指向the window
+        //object.getnameFunc()()类似于
+        var f=function (){//object.getnameFunc()
+            return this.name
+        }
+        f()//object.getnameFunc()() function ({this})()立即执行函数
+
+
+        //思考题2
+        var name="The window";
+        var object={
+            name:'My object',
+            
+            getnameFunc:function(){
+               var that=this//指向当前函数
+                return function(){
+
+                    return that.name;//n=function(){ this} my object 
+                };
+            }
+        };
+        console.log(object.getnameFunc()())
+
+        var n=function(){
+            return that.name;
+        }
+        n() //n=function(){ this}
+    </script>
+</html>

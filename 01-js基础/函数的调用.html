@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+       //普通函数 this指向window
+       function fn(){
+
+        }
+        fn();
+        //2对象的方法
+        //this指向o.say方法
+        var o={
+            say:function(){
+
+            }
+        }
+        o.say();
+
+        //3构造函数this指向实列化对象
+        //this原型对象也指向实列化对象
+         
+        function Fon(){
+
+        }
+        var num=new Fon()
+        console.log(num);
+
+        //4定时器 this指向的是window
+       setInterval(function(){
+   
+        },1000)
+    
+
+        //5绑定事件函数 this指向函数的调用者
+
+        //btn.onclick=function(){} 立马执行
+
+        //立即执行函数 this指向的是window
+       /* (function(){
+
+        })()*/
+        
+    </script>
+</html>

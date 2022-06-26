@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <style>
+      div{
+          width:100px;
+          height: 50px;
+          background-color: bisque;
+      }
+  </style>
+    </head>
+    <body>
+       <div >
+
+       </div>
+    </body>
+    <script>
+        //比如点击鼠标事件就会返回鼠标事件的相关信息,键盘就会返回键盘事件相关的信息。
+        //事件对象event=>事件发生以后,跟当前点击事件相关的一系列信息数据的集合都放到这里面,有很多的属性和方法。
+        var div=document.querySelector('div')
+        div.click=function(event){
+           console.log(event)
+        }
+        div.addEventListener('click',function(event){
+            console.log(event)
+        })
+    </script>
+</html>

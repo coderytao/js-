@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    table{
+        width: 500px;
+        margin: 100px auto;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    td,th{
+        border:1px solid #333;
+    }
+    thead tr{
+        height: 40px;
+        background-color: #ccc;
+    }
+</style>
+    </head>
+    <body>
+      <table cellspaceing="0">
+          <thead>
+              <tr>
+                  <th>姓名</th>
+                  <th>科目</th>
+                  <th>成绩</th>
+                  <th>操作</th>
+              </tr>
+          </thead>
+          <tbody>
+            
+                <tr>
+                    <td>魏应</td>
+                    <td>javascript</td>
+                    <td>100</td>
+                    <td><a href="#">删除</a></td>
+                </tr>
+            
+            
+            
+            
+        </tbody>
+      </table>
+    </body>
+    <script>
+    //准备数据
+    var dates=[{
+        name:'魏莹',
+        subject:'javascript',
+        score:100
+    },{
+        name:'宏利',
+        subject:'javascript',
+        score:88
+    },{
+        name:'明宇',
+        subject:'javascript',
+        score:77
+    }]
+    //创建行
+    var tbody=document.querySelector('tbody')
+    for(var i=0;i<dates.length;i++){
+       var tr=document.createElement('tr');
+    tbody.appendChild(tr)//创建一个tr
+    //行里面创建单元格,td取决于对象里面的属性通过for循环遍历每一个对象
+    for(var j in dates[i]){//dates对象dates[0]第一个对象,dates[1]第二个对象
+        var td=document.createElement('td')//创建td
+        tr.appendChild(td)
+        td.innerHTML=dates[i][j]//遍历属性
+  
+      
+    }
+    //把属性添加到节点中
+    var de=document.createElement('td')
+    de.innerHTML='<a href="#">删除</a>'//删除单元格
+       var lis= tr.insertBefore(de,td.children[dates[i].length-1]);
+    
+    }
+    //删除单元格
+    var as=document.querySelectorAll('a')
+    for(var k=0;k<as.length;k++){
+        as[k].onclick=function(){
+            tbody.removeChild(this.parentNode.parentNode)
+        }
+    }
+    
+    
+    </script>
+</html>

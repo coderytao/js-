@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+      <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+      </ul>
+    </body>
+    <script>
+      //拷贝节点node.cloneNode()方法返回调用该方法的节点的一个副本,也称为克隆节点。
+      //如果括号为空或者为false,则是浅拷贝.只复制克隆复制节点。
+      //括号为true,则是深拷贝.node.cloneNode(true)复制内容和节点
+      var ul=document.querySelector('ul')
+      var lis= ul.children[0].cloneNode();
+      ul.insertBefore(lis,ul.children[0])
+    </script>
+</html>

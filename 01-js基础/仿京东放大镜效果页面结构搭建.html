@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+   
+    .previous{
+        width: 300px;
+        height: 450px;
+        border:1px solid blue;
+        margin-left: 100px;
+    }
+    .previous img{
+        width: 250px;
+        height:400px;
+        padding: 30px 40px;
+        position: relative;
+    }
+    .previous .mask{
+        width: 220px;
+        height: 160px;
+        background: burlywood;
+        opacity: .5;
+        position: absolute;
+        top:100px;
+        left: 155px;
+        display: none;
+        cursor: move;
+    }
+    .big{
+        width: 300px;
+        height: 450px;
+        border:1px solid blue;
+        position: absolute;
+        left: 450px;
+        top:8px;
+    }
+    .big img{
+        width: 300px;
+        height: 450px; 
+        position: absolute;
+        left: -40px;
+        top:-30px;
+        display: none;
+    }
+</style>
+    </head>
+
+    <body>
+     <div class="previous">
+         <img src="img/pc.png" alt="" >
+         <div class="mask"> </div>
+         <div class="big">
+             <img src="img/ps.jpg" alt="">
+         </div>
+     </div>
+     
+    </body>
+
+    <script>
+        //鼠标经过小图片盒子,黄色的遮挡层和大图片盒子显示.离开隐藏2个盒子功能
+        var small=document.querySelectorAll("img")
+        var mask=document.querySelector(".mask")
+        small[0].addEventListener('mouseover',function(){
+           //鼠标经过小盒子和图片显示出来
+            mask.style.display="block";
+            small[1].style.display="block"
+           
+
+         
+        })
+            //黄色遮挡层跟随鼠标功能
+         //计算出盒子内的距离
+         small[0].addEventListener('mouseover',function(e){
+            var x=e.pageX-small[0].offsetLeft;
+            var y=e.pageY-small[0].offsetTop;
+           //把盒子内的距离赋值给鼠标
+           var maskx=x-mask.offsetLeft/2;
+           var masky=y-mask.offsetTop/2;
+           //如果left<0就让它停在最左边框
+           if(maskx<=0){
+              maskx=0;
+           }
+            mask.style.left=maskx+'px';//鼠标中心
+            mask.style.top=masky+'px';
+
+            //大图片移动距离=遮挡层移动距离
+        })
+        
+    </script>
+</html>

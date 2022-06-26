@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        img{
+            width: 300px;
+            height: 200pxs;
+        }
+    </style>
+    </head>
+    <body>
+     <img src="img/data对象.PNG" alt="">
+     <div>早上好</div>
+    </body>
+    <script>
+        var morning=document.querySelector('div')
+        var img=document.querySelector('img')
+        var date=new Date();
+       var hours=date.getHours()
+        function data(time){
+            
+            return time
+         }
+         console.log(data(hours))
+         img.onclick=function(){
+             if(data(data(hours))<=18){
+                 morning.innerHTML="晚上好"
+             }
+             else if(hours<=8){
+                 morning.innerHTML="早上好"
+             }
+             else if(hours<=13){
+                 morning.innerHTML="中午好"
+             }
+         }
+        
+      
+    
+        
+         
+          
+    
+
+        
+    
+    </script>
+</html>

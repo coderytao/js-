@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //super 关键字调用父类的普通函数
+
+        class Father{
+              constructor(){
+                  
+              }
+              say(){
+                  console.log('i‘ father')
+              }
+        }
+        var father=new Father
+        class Son extends Father{
+           
+             say(){
+                 //调用父类的say
+                super.say()
+             }
+        }
+        var son=new Son()
+        son.say()//儿子继承父类
+    </script>
+</html>

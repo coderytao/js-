@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //类的继承
+        //实列化没有变量的提升
+        //es6类的继承语法=> class Father{} class Son extends Father{ }
+       //super 关键字可以调用父类的构造函数,也可以调用父类的普通函数
+        /*class Inherit{
+                 constructor(x,y){
+                    this.x=x;
+                    this.y=y;
+                 }
+                 sum(){
+                     console.log(this.x+this.y)
+                 }
+        }
+        var con=new Inherit()
+       class Son extends Inherit{
+              constructor(x,y){
+                  super(x,y)//调用了父类的构造函数,改变thisd的指向
+              }
+       }
+       var num=new Son(1,2)
+       num.sum();
+*/
+
+        //es5 
+        function Father(na){
+            //此时father的this指向son
+         this.na=na;
+        }
+          
+         
+           var my=new Father('小洪')
+           
+        function Son(name){
+            
+             Father.call(this,name)//father.call(son)father的this指向son
+            
+            //相当于father没有,而Son有
+             //father --function son(){
+               //console.log(son,this)  
+             //}
+            
+        }
+       
+        var me=new Son('小梁')
+       
+
+
+
+
+        //普通案列
+        function fn(){
+            console.log(this.a,this.b)
+        }
+
+        let c={
+            'a':12,
+            'b':13
+           
+        }
+        fn.call(c)
+
+    </script>
+</html>

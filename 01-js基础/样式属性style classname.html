@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+       div{
+           width: 100px;
+           height: 100px;
+       }
+        </style>
+        <body>
+         <div>
+           <button> 点我</button>
+         </div>
+         <img src="img/open.png">
+        </body>
+        <script>
+            //element.style修改样式 js里面采用的是驼峰命名法 行内样式
+              //display:none隐藏元素,display:block显示元素
+           //element.className 类名样式操作 
+            var div=document.querySelector('div')
+            var img=document.querySelector('img')
+            div.onclick=function(){
+                this.style.backgroundColor="red";//this指向的是调用事件的函数
+                this.style.height="200px"
+                img.style.display="none"
+
+            }
+        </script>
+    </head>
+</html>

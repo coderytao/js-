@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <Style>
+          .box{
+              width: 180px;
+              height: 50px;
+            
+             background-color: rosybrown;
+              display: flex;
+          }
+          div{
+              width: 65px;
+              height: 40px;
+             background-color:red;
+             margin-left: 20px;
+             color: blanchedalmond;
+             text-align: center;
+             padding: 5px 5px;
+          }
+      </Style>
+    </head>
+    <body>
+        <div class="box">
+             <div >5</div>
+             <div >20</div>
+             <div >60</div>
+        </div>
+    </body>
+    <script>
+       var item=document.querySelectorAll('div')
+       
+        var minute=60;
+        var second=20;
+        var hours=5;
+        var time1= setInterval(function() {//如果不让页面显示,就开始调用一次。
+            if(minute===0){
+               second=second-1;
+               item[2].innerText=second;
+               var sum=5;
+               minute=sum;//此时为5
+              
+            }
+             if(second==0){
+                 var num=3;
+                 hours=hours-1;
+                 item[1].innerText=hours;
+                 second=num;
+
+             }
+             if(hours==0){
+                var number=0;
+                item[0].innerText=number;
+                clearInterval(time1)
+             }
+          item[3].innerText=minute--;
+          },1000);
+        
+        
+    </script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <style>
+      .item{
+          width: 100px;
+          height: 40px;
+          background-color: aquamarine;
+          position: absolute;
+          left:2px;
+      }
+      .button{
+          width: 30px;
+          height: 50px;
+          background-color:red;
+      }
+  </style>
+    </head>
+    <body>
+       
+  <div class="item">
+
+  </div>
+     
+    </body>
+    <script>
+     //1 =>获取盒子的当前位置
+     //2 =>让盒子在当前位置加上1个移动距离
+     //3 =>利用定时器不断重复这个操作
+     //4 =>加上一个结束定时器的条件
+     //5 =>注意此元素需要添加定位,才能使用element.style.left
+     var move=document.querySelector('.item');//返回的是一个对象
+     var child=20;
+     var button=document.querySelector('.button')
+    /* var tiem=setInterval(() => {
+        
+         
+         var item=move.offsetLeft+child;
+         console.log(item)
+         move.style.left=item+'px';
+         if(item>=40){
+             //停止动画
+             clearInterval(tiem);
+         }
+     }, 2000);
+*/
+
+     //简单动画函数封装obj目标对象,target目标位置
+   
+         //console.log(get)
+        
+        function animate( obj,target,callback){
+           //callback=function (){} //调用的时候callback
+        clearInterval(obj.name)//每次点击时都会开启一个定时器,这里会清除定时器。只保留一个
+          
+        //obj.name相当于给对象添加一个属性
+        //obj={} obj.name='好嘛好嘛'就不会开辟一个新的空间    
+        obj.name=setInterval(() => {
+        
+            
+         var item=obj.offsetLeft+child;
+         console.log(item)
+         obj.style.left=item+'px';
+         if(item>=200){
+           clearInterval(obj.name)
+
+           //调用回调函数
+           if(callback){//如果有callback就调用回调
+               callback();
+           }
+        }
+     }, 2000);
+     }
+   
+    animate(move,40,function(){
+         // alert('你好码')
+          move.style.backgroundColor='red'
+    })//当函数作为一个参数作为一个回调函数
+  
+    
+    </script>
+</html>

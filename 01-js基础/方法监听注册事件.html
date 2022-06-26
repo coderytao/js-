@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+      <button id="btn">传统注册事件</button>
+      <button id="class">方法监听注册事件</button>
+    </body>
+    <script>
+         
+        //1:传统注册事件具有唯一性,同一元素只能设置一个事件 后面注册的事件会覆盖前面的注册事件.
+        //btn.onclick=function(){} <button onclick="alert('1')"></button>
+       var button=document.querySelector("#btn")
+       button.onclick=function(){
+           console.log(11)
+
+       } 
+       //2:方法监听注册方式w3c推荐,eventTarget.addEventListener(type,listener,useCapTrue)
+       //type:事件类型字符串=>click,mouseover.不需要带on
+       //listener:事件处理函数
+       //特点:同一元素同一个事件可以注册多个监听器按顺序以此执行
+       var cl=document.querySelector('#class')
+       cl.addEventListener('click',function(){
+          alert('1')
+       })
+
+       //2:mouseenter鼠标事件和mouseover事件两者的区别
+       //mouseover鼠标经过自身盒子会触发,经过子盒子还会触发.捕获阶段
+       //mouseeneter鼠标事件不会冒泡
+
+    </script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+    .slider-bar{
+        position: absolute;
+        left:50%;
+        top:300px;
+        margin-left: 600px;
+        width: 45px;
+        height: 130px;
+        background-color: pink;
+    }
+    .w{
+        width: 1200px;
+        margin:10px auto;
+    }
+    .header{
+        height: 250px;
+        background-color: purple;
+       
+    }
+    .banner{
+        height: 260px;
+        background-color: yellow;
+    }
+    .main{
+        height: 1000px;
+        background-color: red;
+
+    }
+    span{
+        display: none;
+        position: absolute;
+        bottom:0px;
+       
+    }
+</style>
+    </head>
+    <body>
+        <div class="slider-bar">
+            <span class="goBack">返回顶部</span>
+        </div>
+        <div class="header w">头部区域</div>
+        <div class="banner w">banner区域</div>
+        <div class="main w">主体部分</div>
+    </body>
+    <script>
+       //页面被减去头部,可以通过window.pageYOffset获得
+       //如果被减去左侧,可以用window.pageXOffset
+       //元素被卷去的头部的是element.scrollTop，页面被卷去的是window.pageYOffset 
+       //11.获取元素
+       var sliderbar=document.querySelector('.slider-bar')
+       var banner=document.querySelector('.banner')
+       var goback=document.querySelector('.goBack')
+       var header=document.querySelector('.header')//250
+       var main=document.querySelector('.main')
+      var maintop=main.offsetTop;//540
+      console.log(maintop)
+       var num=sliderbar.offsetTop
+      var sum= banner.offsetTop
+       document.addEventListener('scroll',function(){
+           var x=window.pageYOffset//获得页面被减去的头部
+          // console.log(x)
+         
+         
+
+           //如果x大于301时设置为固定定位
+           //设置活得就是获取banner.offsetTop
+           if(x>=301){
+            sliderbar.style.top=num-sum+'px'; 
+           // console.log(num-sum)   
+            sliderbar.style.position='fixed'//当滚动条滚到对应位置时,给goback设置固定定位
+           }
+           else{
+               sliderbar.style.position="absolute"
+               sliderbar.style.position=300+'px';
+           }
+           if(x>=540){
+               goback.style.display="block"
+           }
+           else{
+               goback.style.display="none"
+           }
+          
+       })
+        
+    </script>
+</html>

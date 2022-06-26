@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+    <ul class="nav">
+        <li>小烧鸡</li>
+        <li>红烧肉</li>
+        <li>酸菜鱼</li>
+    </ul>
+    </body>
+    <script>
+         //获取li
+         var ul=document.querySelector('.nav').querySelectorAll('li')
+         //动态添加属性获取索引号
+        for(var i=0;i<ul.length;i++){
+             //index可以获取当前列表的索引号
+             ul[i].index=i
+             ul[i].onclick=function(){
+                 console.log(this.index)
+             } 
+             //因为for循环时同步而点击事件是异步
+         }
+         //闭包获取属性
+         for(var j=0;j<ul.length;j++){
+             //每创键一个for循环就会立即执行一个立即执行函数
+             (function(i){
+                 //形参0,1,2
+                ul[i].onclick=function(){
+                 console.log(i)//i访问了立即执行函数的i一个作用域访问了另一个作用域的变量就是闭包
+             }
+             })(j)//实参 0,1,2
+         }
+    </script>
+</html>

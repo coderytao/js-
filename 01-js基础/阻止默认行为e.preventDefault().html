@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+     <a href="https://www.bilibili.com/video/BV1Sy4y1C7ha?p=255&spm_id_from=pageDriver">
+        哔哩哔哩
+     </a>
+    </body>
+    <script>
+         //2 阻止默认行为(事件) 让链接不跳转,或者让提交按钮不提交
+         var a=document.querySelector('a');
+         a.addEventListener('click',function(e){
+             e.preventDefault();//dom的标准写法,阻止默认行为
+         })
+    </script>
+</html>

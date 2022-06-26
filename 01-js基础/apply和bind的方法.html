@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+   <button>点击</button>
+    </body>
+    <script>
+        //apply方法调用一个函数,简单理解为调用函数的方式,但是它可以改变函数的this的指向
+
+        //fun.apply(thisArg,[argsArray])
+
+        //thisArg:在fun函数运行时指定this的值
+        //argsArray:传递的值,必须包含在数组里面
+        //返回值就是函数的返回值,因为它就是调用函数
+
+        var o={
+            name:'andy'
+        };
+        function fn(array){
+            console.log(this)
+            console.log(array)
+        }
+        
+        var array=[]
+
+        for(var i in o){
+           array.push(o[i])
+        }
+     fn.apply(o,array)
+      //Math.max();
+      var arr=[1,23,4,6]
+     var min= Math.max.apply(null,arr)
+
+     //bind()不会调用函数,但是能改变函数内部this的指向
+    //fun.bind(thisArg,[argsArray])
+
+     //thisArg:在fun函数运行时指定this的值
+    //ar1g,ar2g:传递的其他参数
+    //返回值就是函数的this值和产生一个新函数就是复制一份函数
+    //如果有的函数我们不需要立即调用,但是又想改变this的指向此时用bind方法
+
+        var c={
+            name:'dy'
+        }
+        function fun(name){
+            console.log(this,name)
+        }
+        var f=fun.bind(c,'小洪')
+        f();
+
+        var button=document.querySelector('button')
+        button.addEventListener('click',function(){
+             this. disabled=true
+            // var that=this;//button
+            setInterval(function (){
+                //that.disabled=false;
+                this.disabled=false
+             }.bind(this),3000)//bind方法不会立即执行函数,此时的this指向的是button
+        })
+    </script>
+</html>

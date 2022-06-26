@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+   <style>
+       div{
+           width: 200px;
+           height: 200px;
+           background-color: black;
+           margin: 0 auto;
+       }
+   </style>
+    </head>
+    <body>
+      <div >
+
+      </div>
+    </body>
+    <script>
+        //setTimeout语法 =>setTimeout(函数名,延迟毫秒数)
+        //页面中有许多的定时器,我们经常给定时器加标识符
+
+       setTimeout(function(){
+           console.log(111)
+       },2000)
+
+       //2=>标识符函数名
+     
+       function callback(){
+           console.log(22)
+       }
+       //写法:setTimeout(标识符,3000)
+       var time1=setTimeout(callback,3000)
+
+       //回调函数=>普通函数直接调用,而回调函数指的是需要等待时间,时间到了才去调用该函数.
+       //比如setTimeout,element.onclick=function(){}
+       
+       //5s后关闭广告
+      var div=document.querySelector('div');
+      setTimeout(function(){
+          div.style.display="none"
+      },5000)
+    </script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+          .password{
+              width: 500px;
+              height: 25px;
+            
+              display: flex;
+              position: relative;
+          }
+          p{
+              color: blueviolet;
+
+          }
+          input{
+ position: absolute;
+ top:15px;
+ left:70px;
+          }
+          span{
+           position: absolute;
+           left:250px;
+           top:15px;
+          }
+          .class{
+            color: red;
+            font-size: 15px;
+          }
+          .wrong{
+              color: red;
+
+          }
+      </style>
+    </head>
+    <body>
+    <div class="password">
+        <p>设置密码</p>
+        <input type="password" value="">
+        <span> 6-16位(字母,数字,符号)区分大小写</span>
+       
+    </div>
+    </body>
+    <script>
+         var input=document.querySelector("input")
+         var span=document.querySelector("span")
+         input.onblur=function(){
+           
+      if(this.value.length<=6){
+          span.className="wrong"
+          span.innerHTML="最短也为3-6位"
+      }
+         }
+           
+    </script>
+</html>

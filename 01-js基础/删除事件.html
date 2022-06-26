@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+       <div>1</div>
+       <div>2</div>
+       <div>3</div>
+    </body>
+    <script>
+        var divs=document.querySelectorAll('div')
+        divs[0].onclick=function(){
+            alert(11);
+            //1:传统删除事件
+            divs[0].onclick=null
+         
+
+        }
+         //2方法删除监听注册方式eventTarget.removeEventListener(type,listener,useCapture)
+         divs[1].addEventListener('click',fn);//里面的fn不需要添加括号
+         function fn(){
+             alert(11);
+             divs[1].removeEventListener('click',fn)//必须声明移除那种函数
+         }
+    </script>
+</html>

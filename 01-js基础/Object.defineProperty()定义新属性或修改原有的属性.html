@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //遍历对象:Object.keys(目标对象)
+        //Object.defineProperty()修改新属性或修改原有的属性
+        var obj={
+            id:1,
+            pname:'xiaomi',
+            price:1999
+        }
+        obj.num=1000;//
+        //Object.defineProperty(obj,'prop',descriptor)
+        //obj:必需。目标对象
+        //prop:必须.需定义或修改的属性的名字
+        //descriptor:必需,目标属性所拥有的特性
+        /*
+        第三个参数:descriptor说明:以对象的形式{}书写
+        *value:设置属性的值默认为undefined
+        *writable值:是否可以重写,true
+        *enumerable:目标属性是否可以被枚举.true|false 此方法就是不能遍历对象 false不可以遍历
+        *configurable:目标属性是否可以被删除或者是否可以再次修改特性true
+ 
+        */
+       Object.defineProperty(obj,'id',{
+           value:2
+       })
+       console.log(obj)
+       Object.defineProperty(obj,'pname',{
+           //不可以重写
+           writable:true
+       })
+       obj.pname='华为'
+       console.log(obj)
+       Object.defineProperty(obj,'address',{
+           writable:false,
+           enumerable:true,
+           configurable:true//false不允许删除
+       })
+      console.log( Object.keys(obj))//遍历对象
+
+      delete obj.address //删除对象的属性
+      console.log(obj)
+    </script>
+</html>

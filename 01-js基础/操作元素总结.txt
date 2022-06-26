@@ -1,0 +1,7 @@
+操作元素=>{
+  1:操作元素内容 =>innertext,innerHTML:不同点innerhtml起始位置到终止位置包含html标签,而innertext去除
+  2:操作常见元素的属性=>src,href,title,alt
+  3:操作表单元素属性=>type,value,disabled
+  4:操作元素样式属性=>element.style,element.classname
+
+}

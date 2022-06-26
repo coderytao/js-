@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+
+        </body>
+        <script>
+            //内置对象就是js自带的对象
+            //Math,Data,Array,String
+            var maMath={
+              PI:3.14,
+              say:function(){
+                  var min=arguments[0];//arguments可以访问函数的参数和数组类型
+                  for(var i=1;i<arguments.length;i++){
+                      if(arguments[i]<min){
+                          mix=arguments[i]
+                      }
+                  }
+                  return min
+              }
+              
+            }
+            console.log(maMath.say(1,2,3,4))
+            
+        </script>
+    </head>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        .tab_list{
+            width: 600px;
+            height: 40px;
+            
+        }
+        .tab_list ul{
+            display: flex;
+            list-style: none;
+          
+          
+            justify-content: space-between;
+            position: relative;
+        }
+       .tab_con {
+           position: absolute;
+           top:60px;
+           left: 50px;
+           
+       }
+       .item{
+           display: none;
+       }
+       .index{
+           background-color: red;
+       }
+    </style>
+    </head>
+    <body>
+       <div class="tab">
+           <div class="tab_list">
+               <ul>
+                   <li class="current">商品介绍</li>
+                   <li>规格与包装</li>
+                   <li>售后服务</li>
+                   <li>商品评价</li>
+                   <li>手机社区</li>
+               </ul>
+           </div>
+           <div class="tab_con">
+               <div class="item" style="display: block;">
+                  商品模板介绍
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+               商品评价(5000)模块内容
+            </div>
+            <div class="item">
+               手机社区模块内容
+            </div>
+           </div>
+       </div>
+    </body>
+    <script>
+        //1:给每个li设置自定义属性,获取当前的自定义属性并设置block
+       var tab_list=document.querySelector('.tab_list')
+       var ul=tab_list.querySelectorAll('li');
+       var item=document.querySelectorAll('.item')
+       for(var i=0;i<ul.length;i++){
+           //给所有的li设定自定义属性
+        ul[i].setAttribute('index',i)
+           ul[i].onclick=function(){
+           
+              //干掉所有人
+               for(i=0;i<ul.length;i++){
+               ul[i].className=''  
+               }
+               //留下自己
+                   this.className="index"
+             //
+             for(var i=0;i<=item.length;i++){
+                 item[i].style.display="none"
+             }
+             //给当前设置设置index属性
+             var index=this.getAttribute('index')
+             //当前属性为显示
+             item[index].style.display="block"
+           }
+       }
+    </script>
+</html>

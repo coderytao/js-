@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //严格模式
+        //消除了javascript语法的一些不合理，不严谨之处.减少了一些怪异行为
+        //提高编译器效率
+        //比如不能用class,extends,super使用变量名
+
+        //为脚本开启严格模式:需要在所有语句之前放一个特定的语句'use strict'
+        'use strcit';//开启严格模式
+    </script>
+    <script>
+        (function(){
+            'use strict';
+            //为整个脚本开启严格模式
+        })()
+
+       
+    </script>
+    <script>
+         //为某个函数开启严格模式
+         function fn(){
+            'use strict'
+            //下面的代码按照严格模式执行
+        }
+    </script>
+</html>

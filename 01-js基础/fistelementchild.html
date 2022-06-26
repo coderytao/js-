@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+   <ul>
+       <li>l</li>
+       <li>li</li>
+       <li>li</li>
+   </ul>
+    </body>
+    <script>
+       //firstChild获取第一个,lastChild包含文本节点和元素节点
+       var li=document.querySelector('ul')
+      // console.log(li.firstChild)
+       //fistElementChild 返回元素的第一个元素节点ie9支持
+       console.log(li.firstElementChild)
+       console.log(li.lastElementChild)
+       //实际开发
+       console.log(li.children[0])
+    </script>
+</html>

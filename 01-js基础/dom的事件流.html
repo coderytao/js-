@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+           .father{
+               width: 200px;
+               height: 200px;
+               background-color: aqua;
+           }
+           .son{
+               width: 100px;
+               height: 100px;
+               background-color: bisque;
+               margin: 0 auto;
+           }
+       </style>
+    </head>
+    <body>
+         <div class="father">
+             <div class="son">
+
+             </div>
+         </div>
+    </body>
+    <script>
+        //有些事件没有冒泡onblur,onfocus,onmouseenter,onmouseleave
+        //1 =>js代码中只能执行捕获或者冒泡的其中一个阶段
+        //2 =>onclick和attachEvent只能得到冒泡
+        //3 => addEventListener(Type,listener,usecapture)
+
+        // 捕获阶段 如果addEventlistener//第三个参数如果是ture则为捕获阶段,false表示为冒泡阶段
+        //true document =>html=>body=>father=>son 捕获
+       var son=document.querySelector('.son')
+       var father=document.querySelector('.father')
+        son.addEventListener('click',function(){
+            alert('hao')
+        },true)
+        father.addEventListener('click',function(){
+            alert('hello')
+        },true)//如果别的节点有事件,则会依次执行
+        //false son=>father=>body=>html=>document 冒泡
+       /* son.addEventListener('click',function(){
+            alert('hao')
+        },false)
+        father.addEventListener('click',function(){
+            alert('hello')
+        },false)//如果别的节点有事件,则会依次执行*/
+    </script>
+</html>

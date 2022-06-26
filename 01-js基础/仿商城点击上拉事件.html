@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        .content{
+            position: absolute;
+        left:45%;
+        top:808px;
+        margin-left: 600px;
+        width: 45px;
+        height: 108px;
+        background-color: pink;
+        display: none;
+        }
+        .main{
+            width: 1200px;
+            height: 400px;
+            background-color: aqua;
+        }
+        .span{
+       
+        position: absolute;
+        bottom:0px;
+       
+    }
+    .footer{
+            width: 1200px;
+            height: 400px;
+            background-color: yellow;
+        }
+        .box{
+            width: 1200px;
+            height: 400px;
+            background-color:red;
+        }
+        .foo{
+            width: 1200px;
+            height: 400px;
+            background-color: blanchedalmond;
+        }
+    </style>
+    </head>
+    <body>
+  <div class="content">
+      <span class="span">点我上去</span>
+  </div>
+  <div class="main">主题内容</div>
+  <div class="box">中间内容</div>
+  <div class="footer">底部内容</div>
+  <div class="foo">底部内容</div>
+    </body>
+    <script>
+        //当滚动条滚到红色覆盖时,左边的出现.
+
+        var main=document.querySelector('.span')
+        var content=document.querySelector('.content')
+        var box=document.querySelector('.box')
+        var footer=document.querySelector('.footer')
+        var number=footer.offsetTop
+        //浏览器页面被减去的头部用,window.pageXoffset
+        document.addEventListener('scroll',function(){
+            var page=window.pageYOffset;//页面头部距离为808
+            //当页面到达808时左侧的侧边栏出现
+            if(page>=808){
+                content.style.display='block'
+               // content.style.position="fixed"//设置固定定位
+               
+            }
+            else{
+                content.style.display="none";
+            }
+            
+        })
+        content.addEventListener('click',function(){
+                    document.documentElement.scrollTop=0+'px'//小图标回到顶部
+                    //scrollTop指的是溢出的距离,设置为0那就是返回主体内容
+                })
+        
+    </script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+
+        </body>
+        <script>
+            //闭包就是有权访问另一函数作用域的变量的函数
+            //fn外部的作用域可以访问fn内部的局部变量
+            //闭包的主要作用:延申了变量的作用范围
+           function fun(){
+               var sum=10;
+               function fn(){
+                   console.log(sum)
+               }
+               fn()
+           }
+           fun()
+            //子函数访问父函数
+
+
+            //父函数访问子函数 外部作用域访问子作用域
+            function fn(){
+                var num=10;
+                function fun(){
+                    console.log(num)
+                }
+                return fun;//return可以把值返回函数的调用者
+            }
+            var fh=fn();
+        
+            //类似于
+            /*var fh=function fun(){
+                console.log(num)
+            }*/
+
+            //
+            function fn(){
+               
+                var total=0;
+                var start=13;
+               return {
+                   price:function(n){
+                   if(n<=3){
+                       console.log(start)
+                   }
+                   else{
+                       total=n*5+start
+                   }
+                   return total
+                   },
+                   yd:function(){
+                       /*
+                       if(start<3){
+                           total=total+start+10;
+                       }
+                       else{
+                           total=content*5+start+10
+                       }*/
+                   }
+               }
+                
+            }
+          var content=fn()
+        console.log( content.price(5))
+         function fun(){
+             var sum=99;
+             function fu(){
+                 console.log(sum)
+                 
+             }
+             return 
+         }
+         var ne=fun()
+         
+        </script>
+    </head>
+</html>

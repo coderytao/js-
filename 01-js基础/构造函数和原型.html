@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+
+        </body>
+        <script>
+            /*创建对象
+            const app={
+                name:'username',
+                age:18,
+
+            }
+            利用构造函数创建对象 相同的属性和方法 构造函数首字母大写
+            function 属性名(){
+               this.属性=值
+               this.方法=function(){
+
+               }
+            }
+            new 构造函数名()
+            */
+          /*  function Fun(age,username){
+                this.age=age
+                this.username=username//此时this指向创建的对象
+                this.say=function(data){
+                     console.log(data)
+                }
+            }
+            
+            const app=new Fun(18,'郭富城')
+            console.log(app.age)
+             app.say('洪涛')
+*/
+          function Fon(name,age){
+                this.name=name;
+                this.age=age;
+              /*  this.fun=function(data){
+                     console.log(data)
+                }*/
+           }
+          Fon.prototype.fun=function(){
+             var x=1
+          }
+         
+          const studio= new Fon('小洪',17)
+          studio.fun()
+        //studio.fun('void')
+        //new关键字创建一个空对象
+        //this指向刚创建的对象
+        //执行构造函数里面的代码给空的对象添加属性和方法
+        //返回对象和属性
+        //构造函数会浪费内存的问题
+
+               //构造函数原型,每一个构造函数都有一个原型prototype
+              
+               //功能:可以把不变的方法,直接定义在prototype,所有对象的实例就可以共享
+
+               //3:每一个原型对象都有__proto__查找规则
+               //首先看Pon是否有sing()方法,没有就去原型就找,因为有__proto__的存在,就去原型prototype去找
+               function Pon(name,age){
+
+               }
+               Pon.prototype.sing=function(){
+                   console.log(1)
+               }
+              Pon.prototype.fun=function(){
+                  console.log(1)
+              }
+               var fun=new Pon('xiao',10)
+               fun.sing()
+               fun.fun()
+               Pon.prototype={
+                   constructor:Pon,
+                  sing:function(){
+
+                  } ,
+                  movie:function(){
+                       console.log('小兔子乖乖')
+                  }
+
+
+               }
+              
+               //很多情况下,我们必需手动利用constructor这个属性指回原来的构造函数
+               //constructor构造函数主要记录该对象引用哪个构造函数,它可以让原型对象重新指向原来的构造函数
+
+               function Hong(name,age){
+                      this.name=name;
+                      this.age=age;
+               }
+               
+                 
+               Hong.prototype={
+                   constructor:Hong,
+                   sex:function(){
+                    console.log(1)
+                   }
+               }
+              
+               var Tao=new Hong('洪文涛',18)
+             //原型链的总结Hong原型对象里面的__protype__原型指向object.prototype
+              
+        </script>
+    </head>
+</html>

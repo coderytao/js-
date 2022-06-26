@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //some数组查找到这个元素,就返回true只要找到了就终止循环。找不到就返回false.相当于检测数组
+        //some返回的是一个布尔值 
+        //array.some(function (currentValue,index,arr))
+
+        //currentValue:数组当前项的值
+        //index:数组当前的索引
+        //arr:数组对象本身
+        //返回一个新数组
+        var arr=[1,2,4];
+        var flag=arr.some(function(value,index){
+            return value>=20
+        })
+        console.log(flag)
+    </script>
+</html>

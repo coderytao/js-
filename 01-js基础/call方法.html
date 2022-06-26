@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+             
+        </body>
+        <script>
+            var fun={
+                name:'小洪'
+              
+            }
+            
+           
+            function fn(x,y){
+                console.log(this)
+                console.log(x+y)
+            }
+            fn.call(fun,1,2)//此时this指向fun
+           // fn.call()//调用fn
+            //call()调用函数时,并且修改函数运行时的this的指向
+            //call()可以改变这个函数this的指向.
+
+            //call方法可以实现继承
+            function Father(name,age){
+                this.name=name;
+                this.age=age;
+            }
+           
+
+            function Son(name,age){
+                Father.call(this,name,age)//把father的this指向son并继承属性和方法
+            }
+            var consum=new Son('小洪','20')
+            console.log(consum)
+        </script>
+    </head>
+</html>

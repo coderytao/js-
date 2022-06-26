@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //闭包:一个作用域可以访问另一个函数的作用域的变量就称为闭包
+        //闭包的主要作用:延申了作用域的范围
+        //普通函数中函数销毁,变量也会销毁。
+        function fun(){
+            var con=10;
+            function fn(){
+              console.log(10)
+            }
+            return fn()//return可以返回函数的值
+        }
+        var sum=fun()//sum=function fn(){} 
+        sum()//
+
+        function fun(){
+            var num=11;
+            return function(){
+ console.log(num)
+            }
+        }
+        var back=fun()
+        back()
+    </script>
+</html>

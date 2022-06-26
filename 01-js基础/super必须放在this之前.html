@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //父类有加法
+        class Father{
+           constructor(x,y){
+               this.x=x;
+               this.y=y;
+           }
+           method(){
+              console.log(this.x+this.y)
+           }
+        }
+
+        //子类有继承父类的加法,平且有自己的减法
+        class Son extends Father{
+            constructor(x,y){
+                //constructor的this指向自己
+                //super必须放在this之前
+                super(x,y);//5+3想调用谁就指向谁
+                
+                this.x=x;
+                this.y=y;
+            }
+             say(){
+                 //调用father的构造函数
+               
+               
+                console.log(this.x-this.y)
+                
+             }
+        }
+        var con=new Son(5,3);
+        con.say();
+        con.method()
+    </script>
+
+</html>
